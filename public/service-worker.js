@@ -24,7 +24,7 @@ const FILES_TO_CACHE = [
   
   // The activate handler takes care of cleaning up old caches.
   self.addEventListener("activate", event => {
-    const currentCaches = [PRECACHE, RUNTIME];
+    const currentCaches = [CACHE_NAME, DATA_CACHE_NAME];
     event.waitUntil(
       caches.keys().then(cacheNames => {
         return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
